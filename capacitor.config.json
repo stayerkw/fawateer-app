@@ -1,0 +1,7 @@
+{
+  "appId": "com.aldahash.fawateer",
+  "appName": "نظام الفواتير",
+  "webDir": "www",
+  "android": { "backgroundColor": "#0b1730" },
+  "plugins": { "SystemBars": { "insetsHandling": "css", "style": "DARK" } }
+}

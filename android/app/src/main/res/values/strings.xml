@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">نظام الفواتير</string>
+    <string name="title_activity_main">نظام الفواتير</string>
+    <string name="package_name">com.aldahash.fawateer</string>
+    <string name="custom_url_scheme">com.aldahash.fawateer</string>
+</resources>

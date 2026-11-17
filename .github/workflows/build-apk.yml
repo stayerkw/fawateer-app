@@ -1,0 +1,61 @@
+name: Build APK
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - uses: android-actions/setup-android@v3
+
+      - name: Install
+        run: npm ci
+
+      - name: Stamp version
+        run: sed -i 's/id="ver">1.0</id="ver">1.${{ github.run_number }}</' www/index.html
+
+      - name: Sync web app into Android
+        run: npx cap sync android
+
+      - name: Signing key
+        env:
+          KS_B64: ${{ secrets.FAWATEER_KEYSTORE_B64 }}
+        run: |
+          echo "$KS_B64" | base64 -d > "$RUNNER_TEMP/release.jks"
+          echo "FAWATEER_KEYSTORE=$RUNNER_TEMP/release.jks" >> "$GITHUB_ENV"
+
+      - name: Build signed APK
+        env:
+          FAWATEER_KEYSTORE_PASSWORD: ${{ secrets.FAWATEER_KEYSTORE_PASSWORD }}
+        run: |
+          cd android
+          chmod +x gradlew
+          ./gradlew assembleRelease --no-daemon
+          cp app/build/outputs/apk/release/app-release.apk "$GITHUB_WORKSPACE/fawateer-v1.${{ github.run_number }}.apk"
+
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.${{ github.run_number }}
+          name: نظام الفواتير v1.${{ github.run_number }}
+          body: ثبّت ملف APK على جوالك. التحديث يحافظ على بياناتك.
+          files: fawateer-v1.${{ github.run_number }}.apk
+          make_latest: true
