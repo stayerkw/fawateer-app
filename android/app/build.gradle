@@ -18,8 +18,8 @@ android {
     }
     signingConfigs {
         release {
-            def ks = System.getenv("FAWATEER_KEYSTORE") ?: "${rootDir}/../keystore/fawateer-release.keystore"
-            storeFile file(ks)
+            def ks = System.getenv("FAWATEER_KEYSTORE")
+            if (ks) { storeFile file(ks) }
             storePassword System.getenv("FAWATEER_KEYSTORE_PASSWORD")
             keyAlias "fawateer"
             keyPassword System.getenv("FAWATEER_KEYSTORE_PASSWORD")

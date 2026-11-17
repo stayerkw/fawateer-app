@@ -40,23 +40,27 @@ jobs:
           KS_B64: ${{ secrets.FAWATEER_KEYSTORE_B64 }}
           KS_PW: ${{ secrets.FAWATEER_KEYSTORE_PASSWORD }}
         run: |
-          if [ -n "$KS_B64" ]; then
+          if [ -n "$KS_B64" ] && [ -n "$KS_PW" ]; then
             echo "$KS_B64" | base64 -d > "$RUNNER_TEMP/release.jks"
             echo "FAWATEER_KEYSTORE=$RUNNER_TEMP/release.jks" >> "$GITHUB_ENV"
             echo "FAWATEER_KEYSTORE_PASSWORD=$KS_PW" >> "$GITHUB_ENV"
+            echo "SIGNED=1" >> "$GITHUB_ENV"
           else
-            # the keystore file is itself password-encrypted; only the password is secret
-            if [ -z "$KS_PW" ]; then echo "::error::أضف السر FAWATEER_KEYSTORE_PASSWORD في Settings > Secrets > Actions"; exit 1; fi
-            echo "FAWATEER_KEYSTORE=$GITHUB_WORKSPACE/keystore/fawateer-release.keystore" >> "$GITHUB_ENV"
-            echo "FAWATEER_KEYSTORE_PASSWORD=$KS_PW" >> "$GITHUB_ENV"
+            echo "::warning::لا يوجد مفتاح توقيع في الأسرار – سيتم بناء نسخة تجريبية (debug)"
+            echo "SIGNED=0" >> "$GITHUB_ENV"
           fi
 
-      - name: Build signed APK
+      - name: Build APK
         run: |
           cd android
           chmod +x gradlew
-          ./gradlew assembleRelease --no-daemon
-          cp app/build/outputs/apk/release/app-release.apk "$GITHUB_WORKSPACE/fawateer-v1.${{ github.run_number }}.apk"
+          if [ "$SIGNED" = "1" ]; then
+            ./gradlew assembleRelease --no-daemon
+            cp app/build/outputs/apk/release/app-release.apk "$GITHUB_WORKSPACE/fawateer-v1.${{ github.run_number }}.apk"
+          else
+            ./gradlew assembleDebug --no-daemon
+            cp app/build/outputs/apk/debug/app-debug.apk "$GITHUB_WORKSPACE/fawateer-v1.${{ github.run_number }}.apk"
+          fi
 
       - name: Publish release
         uses: softprops/action-gh-release@v2
