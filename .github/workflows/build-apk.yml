@@ -38,13 +38,20 @@ jobs:
       - name: Signing key
         env:
           KS_B64: ${{ secrets.FAWATEER_KEYSTORE_B64 }}
+          KS_PW: ${{ secrets.FAWATEER_KEYSTORE_PASSWORD }}
         run: |
-          echo "$KS_B64" | base64 -d > "$RUNNER_TEMP/release.jks"
-          echo "FAWATEER_KEYSTORE=$RUNNER_TEMP/release.jks" >> "$GITHUB_ENV"
+          if [ -n "$KS_B64" ]; then
+            echo "$KS_B64" | base64 -d > "$RUNNER_TEMP/release.jks"
+            echo "FAWATEER_KEYSTORE=$RUNNER_TEMP/release.jks" >> "$GITHUB_ENV"
+            echo "FAWATEER_KEYSTORE_PASSWORD=$KS_PW" >> "$GITHUB_ENV"
+          else
+            # the keystore file is itself password-encrypted; only the password is secret
+            if [ -z "$KS_PW" ]; then echo "::error::أضف السر FAWATEER_KEYSTORE_PASSWORD في Settings > Secrets > Actions"; exit 1; fi
+            echo "FAWATEER_KEYSTORE=$GITHUB_WORKSPACE/keystore/fawateer-release.keystore" >> "$GITHUB_ENV"
+            echo "FAWATEER_KEYSTORE_PASSWORD=$KS_PW" >> "$GITHUB_ENV"
+          fi
 
       - name: Build signed APK
-        env:
-          FAWATEER_KEYSTORE_PASSWORD: ${{ secrets.FAWATEER_KEYSTORE_PASSWORD }}
         run: |
           cd android
           chmod +x gradlew
