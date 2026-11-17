@@ -126,59 +126,74 @@ nav.bn button.on{color:var(--navy);background:#eef1f8;font-weight:600}
 @media(max-width:520px){.grid3{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr 1fr}.stat b{font-size:14px}}
 
 /* ================= INVOICE (A4 @ 794px) ================= */
-.inv{width:794px;min-height:1123px;background:#fff;color:#1b2333;font-family:'IBM Plex Sans Arabic',sans-serif;position:relative;display:flex;flex-direction:column;overflow:hidden;font-size:12.5px;line-height:1.55}
-.inv .hd{position:relative;background:var(--p);color:#fff;padding:32px 40px 30px;display:flex;justify-content:space-between;align-items:center;min-height:156px;overflow:hidden}
-.inv .hd svg.deco{position:absolute;top:0;left:0;width:794px;height:100%}
-.inv .brand{display:flex;gap:16px;align-items:center;position:relative;z-index:1;max-width:470px}
-.inv .brand .lg{width:92px;height:92px;background:#fff;border-radius:18px;display:flex;align-items:center;justify-content:center;padding:9px;flex:none}
+.inv{width:794px;min-height:1123px;background:#fff;color:#1a2233;font-family:'IBM Plex Sans Arabic',sans-serif;position:relative;display:flex;flex-direction:column;overflow:hidden;font-size:12px;line-height:1.55;font-variant-numeric:tabular-nums}
+.inv .wmk{position:absolute;top:-180px;left:-260px;width:1320px;height:1500px;display:flex;flex-direction:column;justify-content:space-between;transform:rotate(-28deg);z-index:0}
+.inv .wmk div{white-space:nowrap;text-align:center;font-size:28px;font-weight:700;color:var(--p);opacity:.035;word-spacing:6px}
+.inv .rule{height:6px;background:var(--p);position:relative;z-index:1}
+.inv .rule i{position:absolute;top:0;height:6px;width:180px;background:var(--a)}
+.inv .hd{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;padding:30px 44px 22px;position:relative;z-index:1}
+.inv .brand{display:flex;gap:16px;align-items:center;min-width:0}
+.inv .brand .lg{width:78px;height:78px;flex:none;display:flex;align-items:center;justify-content:center}
 .inv .brand .lg img{max-width:100%;max-height:100%}
-.inv .brand h1{font-size:23px;font-weight:700;margin:0;line-height:1.3}
-.inv .brand .sp{color:var(--a);font-size:13px;margin-top:3px;font-weight:600}
-.inv .brand .sp2{font-size:11px;opacity:.75;margin-top:2px}
-.inv .dt{position:relative;z-index:1}
-.inv .dt h2{font-size:30px;font-weight:700;color:var(--a);margin:0;line-height:1.15}
-.inv .dt .en{font-size:11px;opacity:.75;margin-top:2px}
-.inv .dt .no{margin-top:10px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);padding:5px 14px;border-radius:999px;font-weight:600;display:inline-block;font-size:13px}
-.inv .strip{background:var(--a);color:var(--p);display:flex;flex-wrap:wrap;gap:4px 22px;padding:9px 40px;font-size:11.5px;font-weight:600}
-.inv .body{padding:24px 40px 0;flex:1;position:relative;z-index:1}
-.inv .meta{display:grid;grid-template-columns:1.15fr 1fr;gap:16px;margin-bottom:20px}
-.inv .bx{border:1px solid #e3e7ef;border-radius:12px;padding:13px 16px;background:#fafbfd}
-.inv .bx h4{margin:0 0 7px;font-size:11.5px;color:var(--p);font-weight:700;display:flex;align-items:center;gap:7px}
-.inv .bx h4 i{width:4px;height:13px;background:var(--a);border-radius:2px;display:inline-block}
-.inv .cn{font-size:16px;font-weight:700;color:#111a2c}
-.inv .kv{display:grid;grid-template-columns:auto 1fr;gap:4px 14px}
-.inv .kv span{color:#6b7385}
-.inv .kv b{font-weight:600}
-.inv table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid #e3e7ef;border-radius:12px;overflow:hidden}
-.inv thead th{background:var(--p);color:#fff;font-weight:600;padding:11px 10px;font-size:11.5px}
-.inv tbody td{padding:10px;border-top:1px solid #edf0f5;vertical-align:middle}
-.inv tbody tr:nth-child(even) td{background:#f7f9fc}
+.inv .brand h1{font-size:22px;font-weight:700;margin:0;line-height:1.3;color:var(--p)}
+.inv .brand .sp{font-size:12.5px;font-weight:600;color:var(--ad);margin-top:3px}
+.inv .brand .sp2{font-size:11px;color:#6b7385;margin-top:1px}
+.inv .dt{flex:none}
+.inv .dt h2{font-size:28px;font-weight:700;margin:0;line-height:1.1;color:#141b2b}
+.inv .dt .en{font-size:11px;color:#6b7385;margin-top:4px;font-weight:500}
+.inv .ct{display:flex;margin:0 44px;border-top:1px solid #dde2ea;border-bottom:1px solid #dde2ea;position:relative;z-index:1}
+.inv .ct .c{flex:1 1 auto;min-width:0;display:flex;align-items:center;gap:9px;padding:10px 14px}
+.inv .ct .c+.c{border-inline-start:1px solid #dde2ea}
+.inv .ct .ic{width:26px;height:26px;border-radius:7px;background:var(--p);display:flex;align-items:center;justify-content:center;flex:none}
+.inv .ct .ic svg{width:14px;height:14px}
+.inv .ct small{display:block;font-size:9.5px;color:#7a8396;line-height:1.2}
+.inv .ct b{display:block;font-size:12px;font-weight:600;color:#1a2233;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.inv .ct .c>div{min-width:0}
+.inv .tb{display:grid;grid-template-columns:repeat(4,1fr);margin:18px 44px 0;border:1px solid #dde2ea;border-radius:6px;position:relative;z-index:1;background:rgba(255,255,255,.85)}
+.inv .tb>div{padding:9px 14px}
+.inv .tb>div+div{border-inline-start:1px solid #dde2ea}
+.inv .tb small{display:block;font-size:10px;color:#7a8396}
+.inv .tb b{display:block;font-size:13px;font-weight:600;margin-top:1px}
+.inv .tb .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-inline-end:6px;vertical-align:1px}
+.inv .body{padding:16px 44px 0;flex:1;position:relative;z-index:1}
+.inv .cu{display:grid;grid-template-columns:1.4fr 1fr;gap:28px;margin-bottom:16px}
+.inv .lbl{font-size:10.5px;font-weight:700;color:var(--p);padding-bottom:5px;margin-bottom:7px;border-bottom:1px solid #dde2ea}
+.inv .cn{font-size:16px;font-weight:700;color:#141b2b;margin-bottom:2px}
+.inv .ln2{color:#4a5368;display:flex;gap:6px;align-items:center}
+.inv .ln2 svg{width:12px;height:12px;flex:none}
+.inv table{width:100%;border-collapse:collapse}
+.inv thead th{background:var(--p);color:#fff;font-weight:600;padding:9px 10px;font-size:11px}
+.inv thead th:first-child{border-start-start-radius:6px;border-end-start-radius:6px}
+.inv thead th:last-child{border-start-end-radius:6px;border-end-end-radius:6px}
+.inv tbody td{padding:10px;border-bottom:1px solid #e6e9ef;vertical-align:middle}
 .inv td.c,.inv th.c{text-align:center}
-.inv td.am{font-weight:600;white-space:nowrap}
-.inv td .ix{display:inline-block;min-width:22px;height:22px;line-height:22px;border-radius:6px;background:#eef1f7;color:var(--p);font-weight:700;font-size:11px;text-align:center}
-.inv .bt{display:grid;grid-template-columns:1.2fr 1fr;gap:18px;margin-top:18px;align-items:start}
-.inv .tt{border:1px solid #e3e7ef;border-radius:12px;overflow:hidden}
-.inv .tt .r{display:flex;justify-content:space-between;padding:8px 14px;border-bottom:1px solid #eef1f6}
+.inv td.ix{color:#8a92a4;font-weight:600;width:34px}
+.inv td.nm{font-weight:600;color:#141b2b}
+.inv td.am{font-weight:700;white-space:nowrap}
+.inv .sm{display:grid;grid-template-columns:1fr 300px;gap:28px;margin-top:14px;align-items:start}
+.inv .tt .r{display:flex;justify-content:space-between;padding:7px 12px;border-bottom:1px solid #e6e9ef}
 .inv .tt .r span{color:#5e6780}
 .inv .tt .r b{font-weight:600}
-.inv .tt .gr{background:var(--p);color:#fff;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:15px}
-.inv .tt .gr b{color:var(--a);font-size:17px}
-.inv .wd{border-radius:12px;padding:11px 14px;background:#fbf8f0;border:1px solid #efe3c3;margin-bottom:12px}
-.inv .wd span{display:block;font-size:10.5px;color:#8a7440;font-weight:700;margin-bottom:2px}
-.inv .wd b{font-weight:600;color:#3b3220}
-.inv .nt{font-size:11.5px;color:#4b5468;white-space:pre-wrap}
-.inv .sg{display:grid;grid-template-columns:110px 1fr 1fr;gap:22px;align-items:end;margin-top:26px}
-.inv .qr{width:104px;height:104px;border:1px solid #e3e7ef;border-radius:10px;padding:5px;background:#fff}
+.inv .tt .gr{display:flex;justify-content:space-between;align-items:center;background:var(--p);color:#fff;padding:11px 12px;border-radius:6px;margin:6px 0}
+.inv .tt .gr span{font-weight:600;font-size:13px}
+.inv .tt .gr b{font-size:18px;font-weight:700;color:var(--a)}
+.inv .tt .gr b small{font-size:11px;font-weight:600;margin-inline-start:4px}
+.inv .wd{font-size:12.5px;font-weight:600;color:#2a3246;margin-bottom:14px}
+.inv .nt{font-size:11.5px;color:#4a5368;white-space:pre-wrap;margin-bottom:14px}
+.inv .kv{display:grid;grid-template-columns:auto 1fr;gap:3px 14px}
+.inv .kv span{color:#7a8396}
+.inv .kv b{font-weight:600}
+.inv .sg{display:grid;grid-template-columns:96px 1fr 1fr;gap:28px;align-items:end;margin-top:26px}
+.inv .qr{width:96px;height:96px}
 .inv .qr img{width:100%;height:100%}
-.inv .ln{text-align:center;color:#6b7385;font-size:11px}
-.inv .ln .sp{height:74px;display:flex;align-items:center;justify-content:center}
-.inv .ln .sp img{max-height:74px;max-width:150px}
-.inv .ln .bar{border-top:1.5px solid #c5ccd9;padding-top:6px}
-.inv .ft{margin-top:22px;background:var(--p);color:#fff;padding:12px 40px;display:flex;justify-content:space-between;align-items:center;font-size:11px;border-top:4px solid var(--a);position:relative;z-index:1}
-.inv .ft b{color:var(--a)}
-.inv .wm{position:absolute;top:470px;left:207px;width:380px;height:380px;opacity:.045;display:flex;align-items:center;justify-content:center;z-index:0}
-.inv .wm img{max-width:100%;max-height:100%}
-.inv .st{position:absolute;top:196px;padding:5px 18px;border:3px solid;border-radius:10px;font-weight:700;font-size:20px;transform:rotate(-12deg);opacity:.85;z-index:2;background:rgba(255,255,255,.7)}
+.inv .sgl{text-align:center;color:#7a8396;font-size:10.5px}
+.inv .sgl .sp{height:70px;display:flex;align-items:center;justify-content:center}
+.inv .sgl .sp img{max-height:70px;max-width:150px}
+.inv .sgl .bar{border-top:1px solid #b9c1cf;padding-top:6px}
+.inv .ft{margin-top:22px;background:var(--p);color:#fff;padding:11px 44px;display:flex;justify-content:space-between;align-items:center;font-size:11px;position:relative;z-index:1}
+.inv .ft .ph{display:flex;gap:16px}
+.inv .ft .ph span{display:flex;align-items:center;gap:6px;font-weight:600}
+.inv .ft svg{width:12px;height:12px}
 </style>
 </head>
 <body>
@@ -314,7 +329,7 @@ function catalog(){const m=new Map();[...S.invoices].sort((a,b)=>(a.updatedAt||0
 function customers(){const m=new Map();[...S.invoices].sort((a,b)=>(a.updatedAt||0)-(b.updatedAt||0)).forEach(v=>{const c=v.cust||{};if(c.name&&c.name.trim())m.set(c.name.trim(),c)});return m}
 
 function viewEditor(){const p=prof();
- if(!p){$('#view').innerHTML=`<div class="card empty"><div style="font-size:42px">🏢</div><h3 style="justify-content:center">ابدأ بإضافة شركتك</h3><p>أضف اسم الشركة واختصاصها وأرقامها واللوجو، ثم أصدر فواتيرك مباشرة.</p><button class="btn gold" id="mk">+ إضافة شركة</button></div>`;$('#mk').onclick=()=>editCompany(null);return}
+ if(!p){$('#view').innerHTML=`<div class="card empty"><h3 style="justify-content:center">ابدأ بإضافة شركتك</h3><p>أضف اسم الشركة واختصاصها وأرقامها واللوجو، ثم أصدر فواتيرك مباشرة.</p><button class="btn gold" id="mk">+ إضافة شركة</button></div>`;$('#mk').onclick=()=>editCompany(null);return}
  if(!S.cur)S.cur=newInvoice();const v=S.cur;if(!v.pid)v.pid=p.id;
  const cat=catalog(),cus=customers();
  $('#view').innerHTML=`
@@ -355,9 +370,9 @@ function viewEditor(){const p=prof();
  <div class="card"><h3>ملاحظات وشروط</h3><textarea id="fNotes" placeholder="شروط الدفع، مدة الضمان، ملاحظات التسليم…">${esc(v.notes)}</textarea></div>
  <div class="sum ${v.type==='delivery'?'hide':''}" id="sum"></div>
  <div class="actions" style="margin-top:14px">
-  <button class="btn gold full" id="bPdf">⬇︎ حفظ وتنزيل PDF</button>
-  <button class="btn pri" id="bPrev">👁 معاينة</button>
-  <button class="btn ghost" id="bSave">💾 حفظ فقط</button>
+  <button class="btn gold full" id="bPdf">حفظ وتنزيل PDF</button>
+  <button class="btn pri" id="bPrev">معاينة</button>
+  <button class="btn ghost" id="bSave">حفظ فقط</button>
   <button class="btn ghost" id="bOther">PDF ${v.lang==='ar'?'English':'عربي'}</button>
   <a class="btn wa" id="bWa" target="_blank" rel="noopener">واتساب العميل</a>
  </div>`;
@@ -416,58 +431,78 @@ function waLink(v){const p=prof()||{},c=calc(v);let ph=(v.cust.phone||'').replac
 /* ============ invoice template ============ */
 function qrData(v,p){const c=calc(v);const txt=`${p.nameEn||'Invoice'}\n${TYPES[v.type].en}: ${v.no}\nDate: ${dmy(v.date)}\nTotal: ${fmt(c.total)} KWD${p.cr?`\nCR: ${p.cr}`:''}`;
  try{const d=document.createElement('div');new QRCode(d,{text:txt,width:240,height:240,colorDark:'#0f1f3d',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.M});const cv=d.querySelector('canvas');return cv?cv.toDataURL('image/png'):''}catch(e){return ''}}
+function fmtPhone(raw){let d=String(raw||'').replace(/[٠-٩]/g,x=>'٠١٢٣٤٥٦٧٨٩'.indexOf(x)).replace(/\D/g,'');if(d.startsWith('00'))d=d.slice(2);
+ if(d.length===8)return '+965 '+d.slice(0,4)+' '+d.slice(4);
+ if(d.length===11&&d.startsWith('965'))return '+965 '+d.slice(3,7)+' '+d.slice(7);
+ if(d.length>8)return '+'+d.slice(0,d.length-8)+' '+d.slice(-8,-4)+' '+d.slice(-4);
+ return String(raw||'').trim()}
+const isMobile=raw=>{const d=String(raw||'').replace(/\D/g,'').replace(/^(00)?965/,'');return d.length===8&&/^[4569]/.test(d)};
+function icon(n,c){const s=`fill="none" stroke="${c}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"`;
+ const P={phone:`<path ${s} d="M5 4h3l1.6 4-2 1.3a11 11 0 0 0 5.1 5.1l1.3-2 4 1.6v3a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2z"/>`,
+ mobile:`<rect ${s} x="7" y="2.5" width="10" height="19" rx="2.2"/><path ${s} d="M11 18.5h2"/>`,
+ mail:`<rect ${s} x="3" y="5" width="18" height="14" rx="2"/><path ${s} d="m3.5 6.5 8.5 6 8.5-6"/>`,
+ pin:`<path ${s} d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle ${s} cx="12" cy="9.5" r="2.5"/>`,
+ doc:`<path ${s} d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path ${s} d="M14 3v5h5M9 13h6M9 17h4"/>`};
+ return `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">${P[n]||''}</svg>`}
+function shade(hex,f){const n=parseInt(hex.slice(1),16);let r=n>>16,g=n>>8&255,b=n&255;r=Math.round(r*f);g=Math.round(g*f);b=Math.round(b*f);return '#'+((1<<24)+(r<<16)+(g<<8)+b).toString(16).slice(1)}
 function invoiceHTML(v,lang){const p=S.profiles.find(x=>x.id===v.pid)||prof();const t=L[lang],c=calc(v),col=pc(p),ar=lang==='ar';
  const nm=ar?(p.nameAr||p.nameEn):(p.nameEn||p.nameAr),sp=ar?(p.specAr||p.specEn):(p.specEn||p.specAr),ad=ar?(p.addrAr||p.addrEn):(p.addrEn||p.addrAr);
  const S_=ar?'right':'left',E_=ar?'left':'right';const logo=assetSrc(p.logo),stamp=assetSrc(p.stamp);const del=v.type==='delivery';
  const unit=u=>{const x=UNITS.find(z=>z[0]===u);return x?(ar?x[1]:x[2]):u};
- const title=ar?TYPES[v.type].ar:TYPES[v.type].en,title2=ar?TYPES[v.type].en:'';
  const phones=(p.phones||'').split(/[,،\n]/).map(s=>s.trim()).filter(Boolean);
- const qr=qrData(v,p);
- const stCol={paid:'#16924f',partial:'#d98b00',unpaid:'#c0392b'}[c.st];
- const deco=`<svg class="deco" viewBox="0 0 794 160" preserveAspectRatio="none"><polygon points="${ar?'0,0 300,0 210,160 0,160':'794,0 494,0 584,160 794,160'}" fill="rgba(255,255,255,0.05)"/><polygon points="${ar?'0,0 200,0 120,160 0,160':'794,0 594,0 674,160 794,160'}" fill="rgba(255,255,255,0.05)"/><polygon points="${ar?'318,0 336,0 246,160 228,160':'476,0 458,0 548,160 566,160'}" fill="${col.a}" opacity="0.85"/><polygon points="${ar?'346,0 356,0 266,160 256,160':'448,0 438,0 528,160 538,160'}" fill="${col.a}" opacity="0.45"/></svg>`;
- const rows=v.items.filter(i=>i.name.trim()).map((it,i)=>`<tr><td class="c" style="width:38px"><span class="ix">${i+1}</span></td><td style="text-align:${S_};font-weight:500">${esc(it.name)}</td><td class="c">${esc(unit(it.unit))}</td><td class="c">${esc(String(num(it.qty)))}</td>${del?'':`<td class="c">${fmt(num(it.price))}</td><td class="am" style="text-align:${E_}">${fmt(num(it.qty)*num(it.price))}</td>`}</tr>`).join('');
- const strip=[...phones.map(x=>`☎ ${esc(x)}`),p.email?`✉ ${esc(p.email)}`:'',ad?`⌂ ${esc(ad)}`:'',p.cr?`${t.cr}: ${esc(p.cr)}`:''].filter(Boolean).map(x=>`<span>${x}</span>`).join('');
- const showStatus=(v.type==='invoice'||v.type==='rental'||v.type==='receipt')&&c.total>0;
- return `<div class="inv" dir="${ar?'rtl':'ltr'}" style="--p:${col.p};--a:${col.a}">
- ${logo?`<div class="wm"><img src="${logo}"></div>`:''}
- <div class="hd">${deco}
-  <div class="brand">${logo?`<div class="lg"><img src="${logo}"></div>`:''}<div><h1>${esc(nm||'')}</h1>${sp?`<div class="sp">${esc(sp)}</div>`:''}${ar&&p.nameEn?`<div class="sp2" dir="ltr" style="text-align:right">${esc(p.nameEn)}</div>`:''}${!ar&&p.nameAr?`<div class="sp2" dir="rtl" style="text-align:left">${esc(p.nameAr)}</div>`:''}</div></div>
-  <div class="dt" style="text-align:${E_}"><h2>${title}</h2>${title2?`<div class="en">${title2}</div>`:''}<div class="no">${t.no} ${esc(v.no||nextNo(p,v.type))}</div></div>
+ const qr=qrData(v,p);const ad2=shade(col.a,.72);
+ const stCol={paid:'#16924f',partial:'#c27a00',unpaid:'#c0392b'}[c.st];
+ const contacts=[...phones.slice(0,3).map(x=>({i:isMobile(x)?'mobile':'phone',l:isMobile(x)?(ar?'جوال':'Mobile'):(ar?'هاتف':'Phone'),v:fmtPhone(x),ltr:1})),
+  p.email?{i:'mail',l:ar?'البريد':'Email',v:p.email,ltr:1}:null, ad?{i:'pin',l:ar?'العنوان':'Address',v:ad}:null].filter(Boolean).slice(0,4);
+ const rows=v.items.filter(i=>i.name.trim()).map((it,i)=>`<tr><td class="c ix">${i+1}</td><td class="nm" style="text-align:${S_}">${esc(it.name)}</td><td class="c">${esc(unit(it.unit))}</td><td class="c">${esc(String(num(it.qty)))}</td>${del?'':`<td class="c">${fmt(num(it.price))}</td><td class="am" style="text-align:${E_}">${fmt(num(it.qty)*num(it.price))}</td>`}</tr>`).join('');
+ const meta=[[t.no,esc(v.no||nextNo(p,v.type))],[t.date,dmy(v.date)]];
+ if(v.type==='quote'&&v.due)meta.push([t.valid,dmy(v.due)]);else if(!del&&v.type!=='receipt'&&v.due)meta.push([t.due,dmy(v.due)]);
+ if(c.st!=='na'&&c.total>0)meta.push([t.status,`<span class="dot" style="background:${stCol}"></span><span style="color:${stCol}">${stName(c.st,lang)}</span>`]);
+ else if(!del&&v.type!=='quote')meta.push([t.method,METHODS[v.method]?METHODS[v.method][ar?0:1]:'']);
+ if(meta.length<4&&v.ref)meta.push([ar?'المرجع':'Ref.',esc(v.ref)]);
+ const wmLine=Array(4).fill(esc(nm||'')).join('  ');
+ const showMethodInBody=c.st!=='na'&&!del&&v.type!=='quote';
+ return `<div class="inv" dir="${ar?'rtl':'ltr'}" style="--p:${col.p};--a:${col.a};--ad:${ad2}">
+ <div class="wmk">${Array(9).fill(`<div>${wmLine}</div>`).join('')}</div>
+ <div class="rule"><i style="${S_}:44px"></i></div>
+ <div class="hd">
+  <div class="brand">${logo?`<div class="lg"><img src="${logo}"></div>`:''}<div style="min-width:0"><h1>${esc(nm||'')}</h1>${sp?`<div class="sp">${esc(sp)}</div>`:''}${ar&&p.nameEn?`<div class="sp2" dir="ltr" style="text-align:right">${esc(p.nameEn)}</div>`:''}${!ar&&p.nameAr?`<div class="sp2" dir="rtl" style="text-align:left">${esc(p.nameAr)}</div>`:''}${p.cr?`<div class="sp2">${t.cr}: <span dir="ltr">${esc(p.cr)}</span></div>`:''}</div></div>
+  <div class="dt" style="text-align:${E_}"><h2>${ar?TYPES[v.type].ar:TYPES[v.type].en}</h2>${ar?`<div class="en">${TYPES[v.type].en}</div>`:''}</div>
  </div>
- ${strip?`<div class="strip">${strip}</div>`:''}
- ${showStatus?`<div class="st" style="${E_}:46px;color:${stCol};border-color:${stCol}">${stName(c.st,lang)}</div>`:''}
+ ${contacts.length?`<div class="ct">${contacts.map(k=>`<div class="c"><span class="ic">${icon(k.i,'#ffffff')}</span><div><small>${k.l}</small><b ${k.ltr?'dir="ltr"':''} style="text-align:${S_}">${esc(k.v)}</b></div></div>`).join('')}</div>`:''}
+ <div class="tb" style="grid-template-columns:repeat(${meta.length},1fr)">${meta.map(m=>`<div><small>${m[0]}</small><b>${m[1]}</b></div>`).join('')}</div>
  <div class="body">
-  <div class="meta">
-   <div class="bx"><h4><i></i>${t.billTo}</h4><div class="cn">${esc(v.cust.name||'—')}</div>${v.cust.phone?`<div>${t.phone}: <span dir="ltr">${esc(v.cust.phone)}</span></div>`:''}${v.cust.addr?`<div>${esc(v.cust.addr)}</div>`:''}</div>
-   <div class="bx"><div class="kv"><span>${t.date}</span><b>${dmy(v.date)}</b>${v.due&&v.type!=='receipt'&&!del?`<span>${v.type==='quote'?t.valid:t.due}</span><b>${dmy(v.due)}</b>`:''}${!del&&v.type!=='quote'?`<span>${t.method}</span><b>${METHODS[v.method]?METHODS[v.method][ar?0:1]:''}</b>`:''}${v.ref?`<span>${ar?'المرجع':'Ref.'}</span><b>${esc(v.ref)}</b>`:''}</div></div>
+  <div class="cu">
+   <div><div class="lbl">${t.billTo}</div><div class="cn">${esc(v.cust.name||'—')}</div>${v.cust.phone?`<div class="ln2">${icon(isMobile(v.cust.phone)?'mobile':'phone','#7a8396')}<span dir="ltr">${esc(fmtPhone(v.cust.phone))}</span></div>`:''}${v.cust.addr?`<div class="ln2">${icon('pin','#7a8396')}<span>${esc(v.cust.addr)}</span></div>`:''}</div>
+   <div>${showMethodInBody||v.ref?`<div class="lbl">${ar?'تفاصيل':'Details'}</div><div class="kv">${showMethodInBody?`<span>${t.method}</span><b>${METHODS[v.method]?METHODS[v.method][ar?0:1]:''}</b>`:''}${v.ref?`<span>${ar?'المرجع':'Ref.'}</span><b>${esc(v.ref)}</b>`:''}</div>`:''}</div>
   </div>
-  <table><thead><tr><th class="c">#</th><th style="text-align:${S_}">${t.desc}</th><th class="c">${t.unit}</th><th class="c">${t.qty}</th>${del?'':`<th class="c">${t.price}</th><th style="text-align:${E_}">${t.amt}</th>`}</tr></thead><tbody>${rows}</tbody></table>
-  <div class="bt" style="${del?'grid-template-columns:1fr':''}">
+  <table><thead><tr><th class="c">#</th><th style="text-align:${S_}">${t.desc}</th><th class="c">${t.unit}</th><th class="c">${t.qty}</th>${del?'':`<th class="c">${t.price}</th><th style="text-align:${E_}">${t.amt} (${t.cur})</th>`}</tr></thead><tbody>${rows}</tbody></table>
+  <div class="sm" style="${del?'grid-template-columns:1fr':''}">
    <div>
-    ${del?'':`<div class="wd"><span>${t.words}</span><b>${esc(amountWords(c.total,lang))}</b></div>`}
-    ${v.notes&&v.notes.trim()?`<div class="bx" style="margin-bottom:12px"><h4><i></i>${t.notes}</h4><div class="nt">${esc(v.notes)}</div></div>`:''}
-    ${(p.iban||p.bank)&&!del&&v.type!=='receipt'?`<div class="bx"><h4><i></i>${t.bank}</h4><div class="kv">${p.bank?`<span>${ar?'البنك':'Bank'}</span><b>${esc(p.bank)}</b>`:''}${p.accName?`<span>${t.acc}</span><b>${esc(p.accName)}</b>`:''}${p.iban?`<span>${t.iban}</span><b dir="ltr" style="text-align:${S_}">${esc(p.iban)}</b>`:''}</div></div>`:''}
+    ${del?'':`<div class="lbl">${t.words}</div><div class="wd">${esc(amountWords(c.total,lang))}</div>`}
+    ${v.notes&&v.notes.trim()?`<div class="lbl">${t.notes}</div><div class="nt">${esc(v.notes)}</div>`:''}
+    ${(p.iban||p.bank)&&!del&&v.type!=='receipt'?`<div class="lbl">${t.bank}</div><div class="kv">${p.bank?`<span>${ar?'البنك':'Bank'}</span><b>${esc(p.bank)}</b>`:''}${p.accName?`<span>${t.acc}</span><b>${esc(p.accName)}</b>`:''}${p.iban?`<span>${t.iban}</span><b dir="ltr" style="text-align:${S_}">${esc(p.iban)}</b>`:''}</div>`:''}
    </div>
    ${del?'':`<div class="tt">
     <div class="r"><span>${t.sub}</span><b>${fmt(c.sub)}</b></div>
     ${c.disc?`<div class="r"><span>${t.disc}${v.discType==='pct'?` (${num(v.discVal)}%)`:''}</span><b>− ${fmt(c.disc)}</b></div>`:''}
     ${c.tax?`<div class="r"><span>${t.tax} (${num(v.taxRate)}%)</span><b>${fmt(c.tax)}</b></div>`:''}
-    <div class="gr"><span>${v.type==='receipt'?t.rtotal:v.type==='quote'?t.qtotal:t.total}</span><b>${fmt(c.total)} ${t.cur}</b></div>
+    <div class="gr"><span>${v.type==='receipt'?t.rtotal:v.type==='quote'?t.qtotal:t.total}</span><b>${fmt(c.total)}<small>${t.cur}</small></b></div>
     ${(v.type==='invoice'||v.type==='rental')&&c.paid>0?`<div class="r"><span>${t.paid}</span><b>${fmt(c.paid)}</b></div><div class="r" style="border:0"><span>${t.rem}</span><b style="color:${c.rem>0?'#c0392b':'#16924f'}">${fmt(c.rem)}</b></div>`:''}
    </div>`}
   </div>
   <div class="sg">
    <div>${qr?`<div class="qr"><img src="${qr}"></div>`:''}</div>
-   <div class="ln"><div class="sp"></div><div class="bar">${del?t.goods:t.recv}</div></div>
-   <div class="ln"><div class="sp">${stamp?`<img src="${stamp}">`:''}</div><div class="bar">${t.stamp}</div></div>
+   <div class="sgl"><div class="sp"></div><div class="bar">${del?t.goods:t.recv}</div></div>
+   <div class="sgl"><div class="sp">${stamp?`<img src="${stamp}">`:''}</div><div class="bar">${t.stamp}</div></div>
   </div>
  </div>
- <div class="ft"><span>${t.thanks}</span><span><b>${esc(nm||'')}</b>${phones[0]?` · <span dir="ltr">${esc(phones[0])}</span>`:''}</span></div>
+ <div class="ft"><span>${t.thanks}</span><div class="ph">${phones.slice(0,2).map(x=>`<span dir="ltr">${icon(isMobile(x)?'mobile':'phone',col.a)}${esc(fmtPhone(x))}</span>`).join('')}</div></div>
 </div>`}
 
 /* ============ preview & pdf ============ */
 function preview(v,lang){const html=invoiceHTML(v,lang);
- $('#sheet').innerHTML=`<div class="hd"><h3>معاينة ${TYPES[v.type].ar}</h3><div class="row"><button class="btn ghost sm" id="pvL">${lang==='ar'?'English':'عربي'}</button><button class="btn ghost sm" id="pvX">إغلاق</button></div></div><div class="pv"><div id="pvBox" style="position:relative"><div class="sc" id="pvSc">${html}</div></div></div><div class="actions" style="margin-top:12px"><button class="btn gold full" id="pvD">⬇︎ حفظ وتنزيل PDF</button></div>`;
+ $('#sheet').innerHTML=`<div class="hd"><h3>معاينة ${TYPES[v.type].ar}</h3><div class="row"><button class="btn ghost sm" id="pvL">${lang==='ar'?'English':'عربي'}</button><button class="btn ghost sm" id="pvX">إغلاق</button></div></div><div class="pv"><div id="pvBox" style="position:relative"><div class="sc" id="pvSc">${html}</div></div></div><div class="actions" style="margin-top:12px"><button class="btn gold full" id="pvD">حفظ وتنزيل PDF</button></div>`;
  $('#ov').classList.add('on');
  const fit=()=>{const box=$('#pvBox'),sc=$('#pvSc');if(!box)return;const w=box.clientWidth,s=w/794;sc.style.transform=`scale(${s})`;sc.style.width='794px';sc.style.position='absolute';sc.style[ 'right']='0';box.style.height=(sc.firstElementChild.offsetHeight*s)+'px'};
  requestAnimationFrame(fit);
@@ -507,7 +542,7 @@ function viewList(){const p=prof();if(!p){go('co');return}
  const sales=month.reduce((s,v)=>s+calc(v).total,0),coll=month.reduce((s,v)=>s+calc(v).paid,0);
  const due=mine.filter(v=>v.type==='invoice'||v.type==='rental').reduce((s,v)=>s+calc(v).rem,0);
  $('#view').innerHTML=`<div class="stats"><div class="stat"><span>مبيعات هذا الشهر</span><b>${fmt(sales)}</b></div><div class="stat"><span>المحصّل هذا الشهر</span><b style="color:var(--ok)">${fmt(coll)}</b></div><div class="stat"><span>إجمالي المستحق</span><b style="color:var(--bad)">${fmt(due)}</b></div></div>
- <div class="card"><input id="q" placeholder="🔍 بحث برقم المستند أو اسم العميل أو المنتج" value="${esc(S.q)}">
+ <div class="card"><input id="q" placeholder="بحث برقم المستند أو اسم العميل أو المنتج" value="${esc(S.q)}">
  <div class="seg" style="margin-top:10px" id="fs">${[['all','الكل'],['unpaid','غير مدفوعة'],['partial','جزئي'],['paid','مدفوعة'],['quote','عروض أسعار'],['other','سندات وتسليم']].map(([k,n])=>`<button data-k="${k}" class="${S.fs===k?'on':''}">${n}</button>`).join('')}</div></div>
  <div id="lst"></div>`;
  const draw=()=>{const q=S.q.trim().toLowerCase();const arr=mine.filter(v=>{const c=calc(v);
@@ -521,8 +556,8 @@ function openActions(id){const v=S.invoices.find(x=>x.id===id);if(!v)return;cons
  $('#sheet').innerHTML=`<div class="hd"><h3>${TYPES[v.type].ar} ${esc(v.no)}</h3><button class="btn ghost sm" id="aX">إغلاق</button></div>
  <p class="muted" style="margin-top:0">${esc(v.cust.name||'')} · ${dmy(v.date)} · <b style="color:var(--ink)">${fmt(c.total)} د.ك</b></p>
  <div class="actions"><button class="btn gold" id="aAr">PDF عربي</button><button class="btn gold" id="aEn">PDF English</button><button class="btn pri" id="aPv">معاينة</button><button class="btn ghost" id="aEd">تعديل</button>
- ${(v.type==='invoice'||v.type==='rental')&&c.rem>0?'<button class="btn ghost full" id="aPay" style="color:var(--ok)">✓ تسجيل كمدفوعة بالكامل</button>':''}
- ${v.type==='quote'?'<button class="btn ghost full" id="aConv">⇄ تحويل العرض إلى فاتورة</button>':''}
+ ${(v.type==='invoice'||v.type==='rental')&&c.rem>0?'<button class="btn ghost full" id="aPay" style="color:var(--ok)">تسجيل كمدفوعة بالكامل</button>':''}
+ ${v.type==='quote'?'<button class="btn ghost full" id="aConv">تحويل العرض إلى فاتورة</button>':''}
  <button class="btn ghost" id="aDup">نسخ كمستند جديد</button>${v.cust.phone?`<a class="btn wa" href="${waLink(v)}" target="_blank" rel="noopener">واتساب</a>`:'<span></span>'}
  <button class="btn danger full" id="aDel">حذف</button></div>`;
  $('#ov').classList.add('on');const close=()=>$('#ov').classList.remove('on');
@@ -589,8 +624,8 @@ $('#swBtn').onclick=()=>{if(!S.profiles.length){editCompany(null);return}
 
 /* ============ backup & reports ============ */
 function viewMore(){const p=prof();
- $('#view').innerHTML=`<div class="card"><h3>تقرير المبيعات</h3><div class="grid"><label class="f">من<input type="date" id="rF" value="${today().slice(0,8)}01"></label><label class="f">إلى<input type="date" id="rT" value="${today()}"></label></div><div id="rOut" style="margin-top:12px"></div><button class="btn pri" id="rCsv" style="width:100%;margin-top:10px">⬇︎ تصدير الفترة Excel (CSV)</button></div>
- <div class="card"><h3>النسخ الاحتياطي</h3><p class="muted" style="margin-top:0">ملف واحد يحتوي كل الشركات والشعارات والفواتير. احتفظ به، ويُستخدم لاحقاً لنقل البيانات إلى تطبيق الأندرويد.</p><div class="actions"><button class="btn gold" id="bk">⬇︎ تنزيل نسخة</button><button class="btn ghost" id="rs">⬆︎ استرجاع نسخة</button></div></div>
+ $('#view').innerHTML=`<div class="card"><h3>تقرير المبيعات</h3><div class="grid"><label class="f">من<input type="date" id="rF" value="${today().slice(0,8)}01"></label><label class="f">إلى<input type="date" id="rT" value="${today()}"></label></div><div id="rOut" style="margin-top:12px"></div><button class="btn pri" id="rCsv" style="width:100%;margin-top:10px">تصدير الفترة إلى Excel</button></div>
+ <div class="card"><h3>النسخ الاحتياطي</h3><p class="muted" style="margin-top:0">ملف واحد يحتوي كل الشركات والشعارات والفواتير. احتفظ به، ويُستخدم لاحقاً لنقل البيانات إلى تطبيق الأندرويد.</p><div class="actions"><button class="btn gold" id="bk">تنزيل نسخة</button><button class="btn ghost" id="rs">استرجاع نسخة</button></div></div>
  <div class="card"><h3>عن النظام</h3><p class="muted" style="margin:0;line-height:1.9">الحفظ: ${Store.mode==='cloud'?'في حسابك على Claude (يظهر من أي جهاز تفتح منه الرابط)':'على هذا الجهاز – نزّل نسخة احتياطية بشكل دوري'}<br>عدد الشركات: ${S.profiles.length} · المستندات: ${S.invoices.length} · الصور: ${S.assets.length}<br>${NATIVE?'تطبيق أندرويد':'لنقل بياناتك للتطبيق: نزّل نسخة من هنا ثم استرجعها داخل التطبيق.'}</p></div>`;
  const rep=()=>{const f=$('#rF').value,t=$('#rT').value;const arr=S.invoices.filter(v=>(!p||v.pid===p.id)&&v.date>=f&&v.date<=t);
   const inv=arr.filter(v=>v.type==='invoice'||v.type==='rental');const tot=inv.reduce((s,v)=>s+calc(v).total,0),pd=inv.reduce((s,v)=>s+calc(v).paid,0),rc=arr.filter(v=>v.type==='receipt').reduce((s,v)=>s+calc(v).total,0);
